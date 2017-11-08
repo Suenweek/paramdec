@@ -1,21 +1,21 @@
-"""
-Parametrized decorator
-"""
+from collections import namedtuple
 
-from functools import wraps
 
-def paramdec(decorator):
-    """
-    Parametrized decorator
+Author = namedtuple("Author", ["name", "email"])
+Version = namedtuple("Version", ["major", "minor", "patch"])
 
-    :param decorator: decorator that will be parametrized
-    :return: parametrized decorator
-    """
-    @wraps(decorator)
-    def wrapper(*args, **kwargs):
-        without_params = len(args) == 1 and callable(args[0]) and not kwargs
-        if without_params:
-            return decorator(args[0])
-        else:
-            return lambda real_func: decorator(real_func, *args, **kwargs)
-    return wrapper
+
+authors = [
+    Author("Roman Novatorov", "suenweek@protonmail.com")
+]
+version = Version(1, 0, 0)
+
+
+__version__ = ".".join(map(str, version))
+__author__ = ", ".join("%s <%s>" % author for author in authors)
+
+
+from .paramdec import paramdec
+
+
+__all__ = ("paramdec",)

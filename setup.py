@@ -1,6 +1,8 @@
 from setuptools import setup
 from codecs import open
 from os import path
+import paramdec
+
 
 here = path.abspath(path.dirname(__file__))
 
@@ -9,12 +11,12 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="paramdec",
-    version="1.0.0",
-    description="Easy parametrized decorators",
+    version=paramdec.__version__,
+    description="An easy way to create parametrized decorators",
     long_description=long_description,
     url="https://github.com/Suenweek/paramdec",
-    author="Suenweek",
-    author_email="suenweek@protonmail.com",
+    author=paramdec.__author__,
+    author_email=", ".join([author.email for author in paramdec.authors]),
     license="GPLv3",
     classifiers=[
         "Development Status :: 3 - Alpha",
