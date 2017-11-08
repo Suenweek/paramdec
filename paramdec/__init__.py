@@ -2,9 +2,7 @@
 Parametrized decorator
 """
 
-
 from functools import wraps
-
 
 def paramdec(decorator):
     """
