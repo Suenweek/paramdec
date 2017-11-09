@@ -2,9 +2,12 @@
 Paramdec
 ========
 
-This module provides a convenient way to create parametrized decorators:
+    Paramdec is a convenient way to create parametrized decorators.
 
-    Create your decorator:
+Usage
+-----
+
+    Create your parametrized decorator:
 
     >>> from paramdec import paramdec
     >>> @paramdec
@@ -21,12 +24,28 @@ This module provides a convenient way to create parametrized decorators:
 
     Or without parameters:
 
-    >>> @my_dec  # Parentheses are optional
+    >>> @my_dec()
     >>> def func(): pass
 
-    Consider using ``functools.wraps`` for your decorators.
+    Or even without parentheses:
 
-    For more info checkout github repo <https://github.com/Suenweek/paramdec>.
+    >>> @my_dec
+    >>> def func(): pass
+
+    Also, consider using ``functools.wraps`` for your decorators.
+
+Limitations
+-----------
+
+    - No positional args supported.
+
+    The rationale behind this is the fact that I have not found any pythonic way to
+    make a decorator differentiate between a function to be decorated and a
+    callback. So if you pass a single callable positional argument to a
+    parametrized decorator, it will mistakenly decide that it was called not as a
+    factory but as a casual decorator.
+
+For more info checkout github repo <https://github.com/Suenweek/paramdec>.
 """
 
 
@@ -41,7 +60,7 @@ authors = [
 ]
 
 
-__version__ = "2.0.1"
+__version__ = "2.0.3"
 __author__ = ", ".join("%s <%s>" % author for author in authors)
 
 

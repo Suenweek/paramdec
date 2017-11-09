@@ -2,6 +2,9 @@ from functools import wraps
 
 
 def paramdec(dec):
+    """
+    Create parametrized decorator.
+    """
     @wraps(dec)
     def wrapper(func=None, **dec_kwargs):
         if callable(func) and not dec_kwargs:
