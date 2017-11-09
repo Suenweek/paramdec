@@ -1,9 +1,6 @@
 Paramdec
 ========
 
-Description:
-------------
-
 Paramdec is a convenient way to create parametrized decorators.
 
 Usage:
