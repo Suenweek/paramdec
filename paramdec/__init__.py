@@ -60,7 +60,7 @@ authors = [
 ]
 
 
-__version__ = "2.0.3"
+__version__ = "2.0.4"
 __author__ = ", ".join("%s <%s>" % author for author in authors)
 
 
