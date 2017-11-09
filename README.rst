@@ -1,6 +1,10 @@
-*************************************************************
-paramdec - A convenient way to create parametrized decorators
-*************************************************************
+Paramdec
+========
+
+Description:
+------------
+
+Paramdec is a convenient way to create parametrized decorators.
 
 Usage:
 ------

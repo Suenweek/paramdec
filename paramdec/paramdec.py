@@ -1,14 +1,12 @@
 from functools import wraps
 
 
-def paramdec(decorator):
-    @wraps(decorator)
-    def wrapper(*args, **kwargs):
-        without_params = len(args) == 1 and callable(args[0]) and not kwargs
-        if without_params:
-            return decorator(args[0])
-        else:
-            return lambda real_func: decorator(real_func, *args, **kwargs)
+def paramdec(dec):
+    @wraps(dec)
+    def wrapper(func=None, **dec_kwargs):
+        if callable(func) and not dec_kwargs:
+            return dec(func)
+        return lambda real_func: dec(real_func, **dec_kwargs)
     return wrapper
 
 

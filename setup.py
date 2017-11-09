@@ -12,11 +12,11 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 setup(
     name="paramdec",
     version=paramdec.__version__,
-    description="A convenient way to create parametrized decorators",
+    description="paramdec is a convenient way to create parametrized decorators.",
     long_description=long_description,
     url="https://github.com/Suenweek/paramdec",
     author=paramdec.__author__,
-    author_email=", ".join([author.email for author in paramdec.authors]),
+    author_email=", ".join(author.email for author in paramdec.authors),
     license="GPLv3",
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -28,5 +28,7 @@ setup(
     ],
     keywords="development parametrized decorator",
     packages=["paramdec"],
-    install_requires=[]
+    install_requires=[],
+    setup_requires=["pytest-runner"],
+    tests_require=["pytest"],
 )
