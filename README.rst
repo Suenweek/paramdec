@@ -22,7 +22,7 @@ Use it with parameters:
 
 Or without parameters:
 
->>> @my_dec  # No parentheses required
+>>> @my_dec  # Parentheses are optional
 >>> def func(): pass
 
 Consider using ``functools.wraps`` for your decorators.
