@@ -13,15 +13,15 @@ Create your decorator:
 
 >>> from paramdec import paramdec
 >>> @paramdec
-... def my_dec(func, *dec_args, **dec_kwargs):
+... def my_dec(func, foo=42, bar=None):
 ...     def wrapper(*func_args, **func_kwargs):
-...         # Process dec_args and dec_kwargs
+...         # Process foo and bar
 ...         return func(*func_args, **func_kwargs)
 ...     return wrapper
 
 Use it with parameters:
 
->>> @my_dec(42, foo="bar")
+>>> @my_dec(bar="bar")
 >>> def func(): pass
 
 Or without parameters:
