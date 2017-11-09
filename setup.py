@@ -12,7 +12,7 @@ with open(path.join(here, "README.rst"), encoding="utf-8") as f:
 setup(
     name="paramdec",
     version=paramdec.__version__,
-    description="Paramdec is a convenient way to create parametrized decorators.",
+    description="A convenient way to create parametrized decorators.",
     long_description=long_description,
     url="https://github.com/Suenweek/paramdec",
     author=paramdec.__author__,
