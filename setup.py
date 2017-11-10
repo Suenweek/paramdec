@@ -27,7 +27,7 @@ setup(
         "Programming Language :: Python :: 3"
     ],
     keywords="development parametrized decorator",
-    packages=["paramdec"],
+    packages=["paramdec", "examples"],
     install_requires=[],
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
