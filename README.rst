@@ -3,6 +3,11 @@ Paramdec
 
 Paramdec is a convenient way to create parametrized decorators.
 
+Installation
+------------
+
+``pip install paramdec``
+
 Usage
 -----
 
