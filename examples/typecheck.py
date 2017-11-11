@@ -5,9 +5,9 @@ from paramdec import paramdec
 @paramdec
 def accepts(func, types=()):
     @wraps(func)
-    def wrapper(*args, **real_kwargs):
+    def wrapper(*args, **kwargs):
         if all(isinstance(a, t) for a, t in zip(args, types)):
-            return func(*args, **real_kwargs)
+            return func(*args, **kwargs)
         else:
             raise TypeError("%s only accepts %s, but was given %s" % (func, types, args))
     return wrapper
