@@ -9,5 +9,5 @@ def reraise(func, catch=Exception, throw=Exception):
         try:
             return func(*args, **kwargs)
         except catch as e:
-            raise throw(e.message)
+            raise throw(*e.args)
     return wrapper
