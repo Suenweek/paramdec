@@ -1,2 +1,2 @@
-def raise_runtime_error_when_called(*args, **kwargs):
-    raise RuntimeError
+def fraise(exc, *args, **kwargs):
+    raise exc(*args, **kwargs)

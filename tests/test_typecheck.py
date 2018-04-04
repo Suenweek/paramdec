@@ -3,7 +3,7 @@ from examples.typecheck import accepts, returns
 
 
 @accepts(types=(int, int))
-@returns(type_=int)
+@returns(type=int)
 def multiply_ints(a, b):
     if a == 6 and b == 9:
         return 42.0

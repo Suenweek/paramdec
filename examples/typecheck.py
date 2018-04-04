@@ -14,12 +14,12 @@ def accepts(func, types=()):
 
 
 @paramdec
-def returns(func, type_=None):
+def returns(func, type=None):
     @wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        if isinstance(result, type_):
+        if isinstance(result, type):
             return result
         else:
-            raise TypeError("%s must return %s, but returned %s" % (func, type_, result))
+            raise TypeError("%s must return %s, but returned %s" % (func, type, result))
     return wrapper
