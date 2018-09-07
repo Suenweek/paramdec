@@ -4,6 +4,15 @@ from functools import wraps
 def paramdec(dec):
     """
     Create parametrized decorator.
+
+    >>> from paramdec import paramdec
+    >>>
+    >>> @paramdec
+    ... def dec(func, foo=42, bar=None):
+    ...     def wrapper(*func_args, **func_kwargs):
+    ...         # Process foo and bar
+    ...         return func(*func_args, **func_kwargs)
+    ...     return wrapper
     """
     @wraps(dec)
     def wrapper(func=None, **dec_kwargs):

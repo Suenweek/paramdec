@@ -16,7 +16,7 @@ Create your parametrized decorator:
 >>> from paramdec import paramdec
 >>>
 >>> @paramdec
-... def my_dec(func, foo=42, bar=None):
+... def dec(func, foo=42, bar=None):
 ...     def wrapper(*func_args, **func_kwargs):
 ...         # Process foo and bar
 ...         return func(*func_args, **func_kwargs)
@@ -24,19 +24,19 @@ Create your parametrized decorator:
 
 Use it with parameters:
 
->>> @my_dec(bar="bar")
+>>> @dec(bar="bar")
 ... def func():
 ...     pass
 
 Or without parameters:
 
->>> @my_dec()
+>>> @dec()
 ... def func():
 ...     pass
 
 Or even without parentheses:
 
->>> @my_dec
+>>> @dec
 ... def func():
 ...     pass
 
